@@ -40,11 +40,11 @@ node('master') {
     }
 
     stage('Deploy') {
-        sh "docker build -t ${props.project} --build-arg project=${props.project}  . --no-cache"
+        sh "/var/jenkins_home/docker/docker build -t ${props.project} --build-arg project=${props.project}  . --no-cache"
         try {
-            sh "docker service create --publish ${props.port}:8080 --name ${props.project} ${props.project}"
+            sh "/var/jenkins_home/docker/docker service create --publish ${props.port}:8080 --name ${props.project} ${props.project}"
         } catch (error) {
-            sh "docker service update --image ${props.project} ${props.project}"
+            sh "/var/jenkins_home/docker/docker service update --image ${props.project} ${props.project}"
         }
     }
 }
