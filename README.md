@@ -1,5 +1,5 @@
-# swampup-template
-Template repo for the sampup demo
+# JCD-template
+Template repo for the JCD demo
 
 
 ## Setting a remote on Gitlab
@@ -16,8 +16,8 @@ Template repo for the sampup demo
     + Validate, and test it to make sure all is good
 3. Clone the original template repo, and change the remote to point to your new repo :
 ```
-git clone git@github.com:laurentgrangeau/swampup-template.git
-cd swampup-template
+git clone git@github.com:laurentgrangeau/jcd.git
+cd jcd
 git remote remove origin
 git remote add origin https://github.com/john/mynewrepo.git
 ```
